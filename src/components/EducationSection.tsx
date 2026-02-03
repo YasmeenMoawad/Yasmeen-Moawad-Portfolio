@@ -1,49 +1,103 @@
-import { GraduationCap, Star } from 'lucide-react';
+import { GraduationCap, Star, Award } from 'lucide-react';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 const EducationSection = () => {
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { once: true, margin: "-100px" });
+
   return (
-    <section className="py-20 px-4">
+    <section className="py-24 px-4" ref={containerRef}>
       <div className="max-w-4xl mx-auto">
-        <h2 className="section-title text-center">Education</h2>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
+        >
+          <h2 className="section-title">
+            <span className="gradient-text">Education</span>
+          </h2>
+        </motion.div>
         
-        <div className="glass-card rounded-3xl p-8 md:p-10">
-          <div className="flex items-start gap-4">
-            <div className="p-3 rounded-2xl bg-primary/10">
-              <GraduationCap className="w-8 h-8 text-primary" />
-            </div>
+        <motion.div 
+          className="glass-card rounded-3xl p-8 md:p-10 relative overflow-hidden"
+          initial={{ opacity: 0, y: 50, scale: 0.95 }}
+          animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 50, scale: 0.95 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          whileHover={{ scale: 1.02 }}
+        >
+          {/* Decorative gradient */}
+          <motion.div 
+            className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-primary/10 to-transparent rounded-full blur-3xl"
+            animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+            transition={{ duration: 5, repeat: Infinity }}
+          />
+          
+          <div className="relative z-10 flex items-start gap-6">
+            <motion.div 
+              className="p-4 rounded-2xl bg-gradient-to-br from-primary to-amber flex-shrink-0"
+              whileHover={{ rotate: [0, -10, 10, 0] }}
+              transition={{ duration: 0.5 }}
+            >
+              <GraduationCap className="w-10 h-10 text-white" />
+            </motion.div>
             
             <div className="flex-1">
-              <div className="flex flex-wrap items-center gap-2 mb-2">
-                <span className="text-sm font-medium text-muted-foreground">2021 — 2024</span>
-                <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-secondary text-secondary-foreground">
+              <div className="flex flex-wrap items-center gap-3 mb-3">
+                <motion.span 
+                  className="px-4 py-1.5 text-sm font-semibold rounded-full bg-gradient-to-r from-primary/20 to-amber/20 text-primary"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  2021 — 2024
+                </motion.span>
+                <span className="px-3 py-1 text-xs font-medium rounded-full bg-secondary text-secondary-foreground">
                   Mansoura University, Egypt
                 </span>
               </div>
               
-              <h3 className="text-2xl font-display font-bold mb-3">
+              <h3 className="text-2xl md:text-3xl font-display font-bold mb-2">
                 Bachelor of Computer Science
               </h3>
               
-              <p className="text-muted-foreground mb-4">
+              <p className="text-muted-foreground mb-6">
                 Faculty of Computer and Information Sciences
               </p>
               
               <div className="flex flex-wrap gap-4">
-                <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-amber/10">
-                  <Star className="w-4 h-4 text-amber" />
-                  <span className="font-semibold">GPA: 3.54</span>
-                  <span className="text-muted-foreground">(82.48%)</span>
-                </div>
+                <motion.div 
+                  className="flex items-center gap-3 px-5 py-3 rounded-xl bg-gradient-to-r from-amber/10 to-primary/10 border border-amber/20"
+                  whileHover={{ scale: 1.05, y: -2 }}
+                >
+                  <Star className="w-5 h-5 text-amber" fill="currentColor" />
+                  <div>
+                    <span className="font-bold text-lg">GPA: 3.54</span>
+                    <span className="text-muted-foreground ml-2 text-sm">(82.48%)</span>
+                  </div>
+                </motion.div>
                 
-                <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-terracotta/10 animate-pulse-glow">
-                  <Star className="w-4 h-4 text-terracotta" />
-                  <span className="font-semibold">Graduation Project:</span>
-                  <span className="text-muted-foreground">Excellent with Honors (196/200)</span>
-                </div>
+                <motion.div 
+                  className="flex items-center gap-3 px-5 py-3 rounded-xl bg-gradient-to-r from-terracotta/10 to-amber/10 border border-terracotta/20"
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  animate={{ 
+                    boxShadow: [
+                      "0 0 0 0 hsl(15, 60%, 60%, 0)",
+                      "0 0 20px 5px hsl(15, 60%, 60%, 0.2)",
+                      "0 0 0 0 hsl(15, 60%, 60%, 0)"
+                    ]
+                  }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                >
+                  <Award className="w-5 h-5 text-terracotta" />
+                  <div>
+                    <span className="font-bold">Graduation Project:</span>
+                    <span className="text-muted-foreground ml-2 text-sm">Excellent with Honors (196/200)</span>
+                  </div>
+                </motion.div>
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

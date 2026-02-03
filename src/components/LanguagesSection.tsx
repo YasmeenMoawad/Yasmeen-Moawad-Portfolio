@@ -1,50 +1,153 @@
-import { Languages, Award } from 'lucide-react';
+import { Languages, Award, Star } from 'lucide-react';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 const LanguagesSection = () => {
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { once: true, margin: "-100px" });
+
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-transparent via-terracotta-light/30 to-transparent">
+    <section className="py-24 px-4 bg-gradient-to-b from-transparent via-terracotta-light/30 to-transparent" ref={containerRef}>
       <div className="max-w-4xl mx-auto">
-        <h2 className="section-title text-center">Languages</h2>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
+        >
+          <h2 className="section-title">
+            <span className="gradient-text">Languages</span>
+          </h2>
+        </motion.div>
         
         <div className="grid md:grid-cols-2 gap-6">
-          <div className="glass-card rounded-2xl p-6">
+          <motion.div 
+            className="glass-card rounded-2xl p-6 relative overflow-hidden"
+            initial={{ opacity: 0, x: -50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+            transition={{ delay: 0.2 }}
+            whileHover={{ scale: 1.03, y: -5 }}
+          >
             <div className="flex items-center gap-3 mb-4">
-              <div className="p-2 rounded-xl bg-primary/10">
+              <motion.div 
+                className="p-3 rounded-xl bg-gradient-to-br from-primary/20 to-amber/20"
+                whileHover={{ rotate: [0, -10, 10, 0] }}
+              >
                 <Languages className="w-6 h-6 text-primary" />
-              </div>
+              </motion.div>
               <div>
                 <h3 className="text-xl font-display font-bold">Arabic</h3>
                 <span className="text-sm text-muted-foreground">Native Speaker</span>
               </div>
             </div>
-            <div className="w-full bg-muted rounded-full h-2">
-              <div className="bg-primary h-2 rounded-full" style={{ width: '100%' }} />
+            
+            <div className="relative h-3 bg-muted rounded-full overflow-hidden">
+              <motion.div 
+                className="absolute inset-y-0 left-0 bg-gradient-to-r from-primary to-amber rounded-full"
+                initial={{ width: 0 }}
+                animate={isInView ? { width: "100%" } : { width: 0 }}
+                transition={{ delay: 0.4, duration: 0.8 }}
+              />
+              <motion.div 
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                animate={{ x: ["-100%", "200%"] }}
+                transition={{ duration: 2, repeat: Infinity, repeatDelay: 2 }}
+              />
             </div>
-          </div>
+            
+            <div className="flex items-center gap-1 mt-3">
+              {[...Array(5)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
+                  transition={{ delay: 0.5 + i * 0.1 }}
+                >
+                  <Star className="w-4 h-4 text-amber" fill="currentColor" />
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
           
-          <div className="glass-card rounded-2xl p-6 animate-pulse-glow">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="p-2 rounded-xl bg-amber/20">
-                <Languages className="w-6 h-6 text-amber" />
-              </div>
-              <div className="flex-1">
-                <h3 className="text-xl font-display font-bold">English</h3>
-                <span className="text-sm text-muted-foreground">Professional Proficiency</span>
-              </div>
-            </div>
+          <motion.div 
+            className="glass-card rounded-2xl p-6 relative overflow-hidden"
+            initial={{ opacity: 0, x: 50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+            transition={{ delay: 0.3 }}
+            whileHover={{ scale: 1.03, y: -5 }}
+          >
+            {/* Special highlight for IELTS */}
+            <motion.div 
+              className="absolute inset-0 bg-gradient-to-br from-amber/5 to-terracotta/5"
+              animate={{ opacity: [0.5, 1, 0.5] }}
+              transition={{ duration: 3, repeat: Infinity }}
+            />
             
-            <div className="w-full bg-muted rounded-full h-2 mb-4">
-              <div className="bg-amber h-2 rounded-full" style={{ width: '90%' }} />
-            </div>
-            
-            <div className="flex items-center gap-2 p-3 rounded-xl bg-amber/10 border border-amber/20">
-              <Award className="w-5 h-5 text-amber" />
-              <div>
-                <span className="font-semibold text-amber">IELTS Academic: Band 7</span>
-                <span className="text-sm text-muted-foreground ml-2">December 2024</span>
+            <div className="relative z-10">
+              <div className="flex items-center gap-3 mb-4">
+                <motion.div 
+                  className="p-3 rounded-xl bg-gradient-to-br from-amber/20 to-terracotta/20"
+                  animate={{ 
+                    boxShadow: [
+                      "0 0 0 0 hsl(35, 90%, 60%, 0)",
+                      "0 0 15px 3px hsl(35, 90%, 60%, 0.3)",
+                      "0 0 0 0 hsl(35, 90%, 60%, 0)"
+                    ]
+                  }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                >
+                  <Languages className="w-6 h-6 text-amber" />
+                </motion.div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-display font-bold">English</h3>
+                  <span className="text-sm text-muted-foreground">Professional Proficiency</span>
+                </div>
               </div>
+              
+              <div className="relative h-3 bg-muted rounded-full overflow-hidden mb-4">
+                <motion.div 
+                  className="absolute inset-y-0 left-0 bg-gradient-to-r from-amber to-terracotta rounded-full"
+                  initial={{ width: 0 }}
+                  animate={isInView ? { width: "90%" } : { width: 0 }}
+                  transition={{ delay: 0.5, duration: 0.8 }}
+                />
+                <motion.div 
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                  animate={{ x: ["-100%", "200%"] }}
+                  transition={{ duration: 2, repeat: Infinity, repeatDelay: 2, delay: 0.5 }}
+                />
+              </div>
+              
+              {/* IELTS Certificate Highlight */}
+              <motion.div 
+                className="flex items-center gap-3 p-4 rounded-xl bg-gradient-to-r from-amber/20 to-terracotta/20 border border-amber/30"
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ delay: 0.7 }}
+                whileHover={{ scale: 1.02 }}
+              >
+                <motion.div
+                  animate={{ rotate: [0, 10, -10, 0] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                >
+                  <Award className="w-8 h-8 text-amber" />
+                </motion.div>
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="font-bold text-lg text-amber">IELTS Academic</span>
+                    <motion.span 
+                      className="px-2 py-0.5 rounded-full bg-amber text-white text-sm font-bold"
+                      animate={{ scale: [1, 1.1, 1] }}
+                      transition={{ duration: 1.5, repeat: Infinity }}
+                    >
+                      Band 7
+                    </motion.span>
+                  </div>
+                  <span className="text-sm text-muted-foreground">Certified December 2024</span>
+                </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
