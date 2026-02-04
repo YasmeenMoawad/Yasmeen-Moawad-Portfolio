@@ -111,32 +111,13 @@ const ContactBanner = () => {
               ))}
             </motion.div>
             
-            <motion.a
+            <a
               href="mailto:yasmeenmwd@gmail.com"
-              className="relative inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-primary via-amber to-terracotta text-primary-foreground font-semibold text-lg shadow-lg overflow-hidden"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
-              transition={{ delay: 0.6 }}
-              whileHover={{ 
-                scale: 1.05,
-                boxShadow: "0 20px 60px hsl(35 80% 55% / 0.4)"
-              }}
-              whileTap={{ scale: 0.98 }}
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-primary via-amber to-terracotta text-primary-foreground font-semibold text-lg shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-300 active:scale-95"
             >
-              <Send className="w-5 h-5 relative z-10" />
-              <span className="relative z-10">Get In Touch</span>
-              
-              {/* Shine effect */}
-              <motion.div 
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent rounded-full pointer-events-none"
-                animate={{ x: ["-100%", "200%"] }}
-                transition={{ 
-                  duration: 2,
-                  repeat: Infinity,
-                  repeatDelay: 3
-                }}
-              />
-            </motion.a>
+              <Send className="w-5 h-5" />
+              <span>Get In Touch</span>
+            </a>
           </div>
         </motion.div>
         
