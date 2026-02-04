@@ -50,7 +50,7 @@ const VolunteeringSection = () => {
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-24 px-4 bg-gradient-to-b from-transparent via-sage-light/20 to-transparent relative overflow-hidden" ref={containerRef}>
+    <section className="py-16 px-4 bg-gradient-to-b from-transparent via-sage-light/20 to-transparent relative overflow-hidden" ref={containerRef}>
       {/* Floating hearts decoration */}
       {[...Array(3)].map((_, i) => (
         <motion.div

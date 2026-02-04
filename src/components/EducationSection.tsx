@@ -7,7 +7,7 @@ const EducationSection = () => {
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-24 px-4" ref={containerRef}>
+    <section className="py-16 px-4" ref={containerRef}>
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -77,7 +77,7 @@ const EducationSection = () => {
                 </motion.div>
                 
                 <motion.div 
-                  className="flex items-center gap-3 px-5 py-3 rounded-xl bg-gradient-to-r from-terracotta/10 to-amber/10 border border-terracotta/20"
+                  className="flex items-start gap-3 px-5 py-3 rounded-xl bg-gradient-to-r from-terracotta/10 to-amber/10 border border-terracotta/20"
                   whileHover={{ scale: 1.05, y: -2 }}
                   animate={{ 
                     boxShadow: [
@@ -88,10 +88,12 @@ const EducationSection = () => {
                   }}
                   transition={{ duration: 2, repeat: Infinity }}
                 >
-                  <Award className="w-5 h-5 text-terracotta" />
+                  <Award className="w-5 h-5 text-terracotta flex-shrink-0 mt-0.5" />
                   <div>
-                    <span className="font-bold">Graduation Project:</span>
-                    <span className="text-muted-foreground ml-2 text-sm">Excellent with Honors (196/200)</span>
+                    <div className="font-bold">Graduation Project: <span className="text-muted-foreground font-normal text-sm">Excellent with Honors (196/200)</span></div>
+                    <p className="text-xs text-muted-foreground mt-1 italic">
+                      "A space information and VR simulator Application for educational satellites control and space navigation"
+                    </p>
                   </div>
                 </motion.div>
               </div>

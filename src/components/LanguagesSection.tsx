@@ -7,7 +7,7 @@ const LanguagesSection = () => {
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-24 px-4 bg-gradient-to-b from-transparent via-terracotta-light/30 to-transparent" ref={containerRef}>
+    <section className="py-16 px-4 bg-gradient-to-b from-transparent via-terracotta-light/30 to-transparent" ref={containerRef}>
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -119,8 +119,11 @@ const LanguagesSection = () => {
               </div>
               
               {/* IELTS Certificate Highlight */}
-              <motion.div 
-                className="flex items-center gap-3 p-4 rounded-xl bg-gradient-to-r from-amber/20 to-terracotta/20 border border-amber/30"
+              <motion.a 
+                href="https://drive.google.com/file/d/1MLIvfrzV6ToDJnF-P7oPBjX-vGIczeGZ/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 p-4 rounded-xl bg-gradient-to-r from-amber/20 to-terracotta/20 border border-amber/30 cursor-pointer block"
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ delay: 0.7 }}
@@ -143,9 +146,9 @@ const LanguagesSection = () => {
                       Band 7
                     </motion.span>
                   </div>
-                  <span className="text-sm text-muted-foreground">Certified December 2024</span>
+                  <span className="text-sm text-muted-foreground">Certified December 2024 • Click to view</span>
                 </div>
-              </motion.div>
+              </motion.a>
             </div>
           </motion.div>
         </div>

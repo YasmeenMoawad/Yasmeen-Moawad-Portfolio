@@ -31,7 +31,7 @@ const AwardsSection = () => {
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-24 px-4 relative overflow-hidden" ref={containerRef}>
+    <section className="py-16 px-4 relative overflow-hidden" ref={containerRef}>
       {/* Floating trophy decoration */}
       <motion.div
         className="absolute top-20 left-1/4 opacity-10"

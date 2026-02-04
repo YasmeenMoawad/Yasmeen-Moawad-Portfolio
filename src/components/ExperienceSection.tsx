@@ -127,7 +127,7 @@ const ExperienceSection = () => {
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-24 px-4 bg-gradient-to-b from-transparent via-sage-light/30 to-transparent relative overflow-hidden" ref={containerRef}>
+    <section className="py-16 px-4 bg-gradient-to-b from-transparent via-sage-light/30 to-transparent relative overflow-hidden" ref={containerRef}>
       {/* Floating decoration */}
       <motion.div
         className="absolute top-40 right-10 w-40 h-40 border border-primary/10 rounded-full"
@@ -148,7 +148,7 @@ const ExperienceSection = () => {
           </h2>
         </motion.div>
         
-        <div className="space-y-6 mb-20">
+        <div className="space-y-6 mb-12">
           {experiences.map((exp, index) => (
             <ExperienceCard key={exp.title} experience={exp} index={index} isInView={isInView} />
           ))}
