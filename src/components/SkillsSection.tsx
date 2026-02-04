@@ -1,22 +1,22 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Code, Palette, Users, Lightbulb } from 'lucide-react';
+import { Code, Palette, Users, Lightbulb, Smartphone, Database, GitBranch, Cpu, Flame, Layout, Sparkles, TestTube, Figma } from 'lucide-react';
 
 const technicalSkills = [
-  { name: 'Dart & Flutter', level: 95 },
-  { name: 'Clean Architecture', level: 90 },
-  { name: 'State Management (BLoC, Cubit)', level: 90 },
-  { name: 'REST APIs', level: 88 },
-  { name: 'Firebase', level: 85 },
-  { name: 'Responsive UI', level: 92 },
-  { name: 'Animations', level: 88 },
-  { name: 'Version Control (Git)', level: 85 },
-  { name: 'Python', level: 75 },
-  { name: 'C++', level: 70 },
-  { name: 'Data Structures & Algorithms', level: 82 },
-  { name: 'SDLC & Agile', level: 80 },
-  { name: 'Testing & Debugging', level: 85 },
-  { name: 'Figma', level: 75 },
+  { name: 'Dart & Flutter', icon: Smartphone },
+  { name: 'Clean Architecture', icon: Layout },
+  { name: 'State Management (BLoC, Cubit)', icon: Cpu },
+  { name: 'REST APIs', icon: Database },
+  { name: 'Firebase', icon: Flame },
+  { name: 'Responsive UI', icon: Layout },
+  { name: 'Animations', icon: Sparkles },
+  { name: 'Version Control (Git)', icon: GitBranch },
+  { name: 'Python', icon: Code },
+  { name: 'C++', icon: Code },
+  { name: 'Data Structures & Algorithms', icon: Cpu },
+  { name: 'SDLC & Agile', icon: GitBranch },
+  { name: 'Testing & Debugging', icon: TestTube },
+  { name: 'Figma', icon: Figma },
 ];
 
 const softSkills = [
@@ -28,54 +28,12 @@ const softSkills = [
   { name: 'Mentoring & Teaching', icon: Palette },
 ];
 
-const SkillBar = ({ skill, index }: { skill: { name: string; level: number }; index: number }) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
-  
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, x: -30 }}
-      animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
-      transition={{ delay: index * 0.05, duration: 0.4 }}
-      className="group"
-    >
-      <div className="flex justify-between mb-2">
-        <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
-          {skill.name}
-        </span>
-        <span className="text-sm text-muted-foreground">{skill.level}%</span>
-      </div>
-      <div className="h-2 bg-muted rounded-full overflow-hidden">
-        <motion.div
-          className="h-full bg-gradient-to-r from-primary via-amber to-terracotta rounded-full relative"
-          initial={{ width: 0 }}
-          animate={isInView ? { width: `${skill.level}%` } : { width: 0 }}
-          transition={{ delay: index * 0.05 + 0.3, duration: 0.8, ease: "easeOut" }}
-        >
-          {/* Shimmer effect */}
-          <motion.div 
-            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent"
-            animate={{ x: ["-100%", "200%"] }}
-            transition={{ 
-              duration: 2,
-              repeat: Infinity,
-              repeatDelay: 3,
-              delay: index * 0.1
-            }}
-          />
-        </motion.div>
-      </div>
-    </motion.div>
-  );
-};
-
 const SkillsSection = () => {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-24 px-4 bg-gradient-to-b from-transparent via-muted/30 to-transparent relative overflow-hidden">
+    <section className="py-16 px-4 bg-gradient-to-b from-transparent via-muted/30 to-transparent relative overflow-hidden">
       {/* Floating decorations */}
       <motion.div
         className="absolute top-20 right-20 w-20 h-20 border-2 border-primary/20 rounded-full"
@@ -93,7 +51,7 @@ const SkillsSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
           <h2 className="section-title">
             Technical{' '}
@@ -104,41 +62,56 @@ const SkillsSection = () => {
           </p>
         </motion.div>
         
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Technical Skills */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="flex items-center gap-3 mb-8">
-              <div className="p-3 rounded-2xl bg-gradient-to-br from-primary to-amber">
-                <Code className="w-6 h-6 text-white" />
-              </div>
-              <h3 className="text-2xl font-display font-bold">Technical Skills</h3>
+        {/* Technical Skills - Card Grid */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.6 }}
+          className="mb-10"
+        >
+          <div className="flex items-center gap-3 mb-6">
+            <div className="p-3 rounded-2xl bg-gradient-to-br from-primary to-amber">
+              <Code className="w-6 h-6 text-white" />
             </div>
-            
-            <div className="glass-card rounded-2xl p-6 space-y-4">
-              {technicalSkills.map((skill, index) => (
-                <SkillBar key={skill.name} skill={skill} index={index} />
-              ))}
-            </div>
-          </motion.div>
+            <h3 className="text-2xl font-display font-bold">Technical Skills</h3>
+          </div>
           
-          {/* Soft Skills */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+            {technicalSkills.map((skill, index) => (
+              <motion.div
+                key={skill.name}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                transition={{ delay: index * 0.05 }}
+                whileHover={{ scale: 1.05, y: -5 }}
+                className="glass-card rounded-xl p-4 text-center group cursor-pointer"
+              >
+                <motion.div 
+                  className="w-10 h-10 mx-auto mb-2 rounded-lg bg-gradient-to-br from-primary/20 to-amber/20 flex items-center justify-center group-hover:from-primary group-hover:to-amber transition-all duration-300"
+                >
+                  <skill.icon className="w-5 h-5 text-primary group-hover:text-white transition-colors" />
+                </motion.div>
+                <span className="text-xs font-medium leading-tight block">{skill.name}</span>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+        
+        {/* Soft Skills + Quote Row */}
+        <div className="grid lg:grid-cols-2 gap-8">
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: -30 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="flex items-center gap-3 mb-8">
+            <div className="flex items-center gap-3 mb-6">
               <div className="p-3 rounded-2xl bg-gradient-to-br from-sage to-secondary">
                 <Users className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-2xl font-display font-bold">Soft Skills</h3>
             </div>
             
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
               {softSkills.map((skill, index) => (
                 <motion.div
                   key={skill.name}
@@ -146,21 +119,28 @@ const SkillsSection = () => {
                   animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                   transition={{ delay: index * 0.1 + 0.3 }}
                   whileHover={{ scale: 1.05, y: -5 }}
-                  className="glass-card rounded-2xl p-5 text-center group cursor-pointer"
+                  className="glass-card rounded-xl p-4 text-center group cursor-pointer"
                 >
                   <motion.div 
-                    className="w-12 h-12 mx-auto mb-3 rounded-xl bg-gradient-to-br from-terracotta/20 to-amber/20 flex items-center justify-center group-hover:from-terracotta group-hover:to-amber transition-all duration-300"
+                    className="w-10 h-10 mx-auto mb-2 rounded-lg bg-gradient-to-br from-terracotta/20 to-amber/20 flex items-center justify-center group-hover:from-terracotta group-hover:to-amber transition-all duration-300"
                   >
-                    <skill.icon className="w-6 h-6 text-terracotta group-hover:text-white transition-colors" />
+                    <skill.icon className="w-5 h-5 text-terracotta group-hover:text-white transition-colors" />
                   </motion.div>
-                  <span className="text-sm font-medium">{skill.name}</span>
+                  <span className="text-xs font-medium">{skill.name}</span>
                 </motion.div>
               ))}
             </div>
-            
-            {/* Decorative quote */}
+          </motion.div>
+          
+          {/* Decorative quote */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="flex items-center"
+          >
             <motion.div
-              className="mt-8 glass-card rounded-2xl p-6 relative overflow-hidden"
+              className="glass-card rounded-2xl p-6 relative overflow-hidden w-full"
               whileHover={{ scale: 1.02 }}
             >
               <motion.div 

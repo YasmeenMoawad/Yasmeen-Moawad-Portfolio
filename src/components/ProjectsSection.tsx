@@ -4,12 +4,22 @@ import { useRef, useState } from 'react';
 
 const projects = [
   {
+    name: 'Show Gym',
+    description: 'Workouts application for online training, providing AI-powered video guidelines and access to professional coaches.',
+    technologies: ['Flutter', 'AI Videos', 'Go Router', 'Video Player', 'Shared Preferences', 'MVVM Architecture', 'Localization'],
+    gradient: 'from-terracotta via-primary to-amber',
+    playStore: 'https://play.google.com/store/apps/details?id=com.jaadara.show_gym',
+    appStore: 'https://apps.apple.com/eg/app/show-gym/id6757421033',
+    github: null,
+  },
+  {
     name: 'Adala AI App',
     description: 'Legal services application for individuals and companies, providing fast and secure legal assistance that complies with Saudi regulations.',
     technologies: ['Flutter', 'AI Chatbot', 'File Management', 'Hive', 'Firebase', 'MVC Architecture', 'Localization', 'Voice Recorder'],
     gradient: 'from-primary via-amber to-terracotta',
-    playStore: '#',
-    appStore: '#',
+    playStore: 'https://play.google.com/store/apps/details?id=com.jadaara.adala_v2',
+    appStore: 'https://apps.apple.com/eg/app/ai-%D8%B9%D8%AF%D8%A7%D9%84%D8%A9/id6754815237',
+    github: null,
   },
   {
     name: 'LOCUS',
@@ -17,16 +27,18 @@ const projects = [
     description: 'Space information and VR simulator application for educational satellites control and space navigation. Led the team as Flutter Developer and Team Leader.',
     technologies: ['Flutter', 'BLoC/Cubit', 'AI Chatbot', 'AI Image Generator', 'Object Detection', 'MVVM Architecture', 'Video Player'],
     gradient: 'from-sage via-secondary to-primary',
-    playStore: '#',
+    playStore: null,
     appStore: null,
+    github: 'https://github.com/YasmeenMoawad/Locus_UpdatedVersion/tree/main',
   },
   {
     name: 'EGem Application',
     description: 'Workouts application for online training, providing AI-powered video guidelines and access to professional coaches.',
     technologies: ['Flutter', 'AI Videos', 'Go Router', 'Video Player', 'Shared Preferences', 'MVVM Architecture', 'Localization'],
-    gradient: 'from-terracotta via-primary to-amber',
-    playStore: '#',
+    gradient: 'from-amber via-sage to-primary',
+    playStore: null,
     appStore: null,
+    github: 'https://github.com/https-github-com-NourMansour911/Application',
   },
 ];
 
@@ -57,7 +69,7 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section className="py-24 px-4 relative overflow-hidden" ref={containerRef}>
+    <section className="py-16 px-4 relative overflow-hidden" ref={containerRef}>
       {/* Background decoration */}
       <motion.div 
         className="absolute top-1/2 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/20 to-transparent"
@@ -123,7 +135,7 @@ const ProjectsSection = () => {
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
               transition={{ delay: index * 0.2, duration: 0.5 }}
               whileHover={{ y: -10 }}
-              className="project-card relative group"
+              className="project-card relative group min-w-[320px] max-w-[340px]"
             >
               {/* Gradient top border */}
               <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${project.gradient} rounded-t-2xl`} />
@@ -173,33 +185,53 @@ const ProjectsSection = () => {
                   )}
                 </div>
                 
-                <div className="flex gap-3">
+                <div className="flex flex-wrap gap-2">
                   {project.playStore && (
                     <motion.a
                       href={project.playStore}
-                      className="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary/10 text-primary text-sm font-medium"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-3 py-2 rounded-lg bg-primary/10 text-primary text-xs font-medium"
                       whileHover={{ 
                         scale: 1.05, 
                         backgroundColor: "hsl(var(--primary) / 0.2)"
                       }}
                       whileTap={{ scale: 0.98 }}
                     >
-                      <ExternalLink className="w-4 h-4" />
+                      <ExternalLink className="w-3 h-3" />
                       Play Store
                     </motion.a>
                   )}
                   {project.appStore && (
                     <motion.a
                       href={project.appStore}
-                      className="flex items-center gap-2 px-4 py-2 rounded-lg bg-accent/10 text-accent text-sm font-medium"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-3 py-2 rounded-lg bg-accent/10 text-accent text-xs font-medium"
                       whileHover={{ 
                         scale: 1.05,
                         backgroundColor: "hsl(var(--accent) / 0.2)"
                       }}
                       whileTap={{ scale: 0.98 }}
                     >
-                      <ExternalLink className="w-4 h-4" />
+                      <ExternalLink className="w-3 h-3" />
                       App Store
+                    </motion.a>
+                  )}
+                  {project.github && (
+                    <motion.a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-3 py-2 rounded-lg bg-muted text-muted-foreground text-xs font-medium"
+                      whileHover={{ 
+                        scale: 1.05,
+                        backgroundColor: "hsl(var(--muted) / 0.8)"
+                      }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      <ExternalLink className="w-3 h-3" />
+                      GitHub
                     </motion.a>
                   )}
                 </div>

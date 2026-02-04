@@ -7,7 +7,7 @@ const stats = [
   { icon: Briefcase, label: 'Projects Built', value: 5, suffix: '+', color: 'from-primary to-amber' },
   { icon: Building2, label: 'Companies Worked', value: 2, suffix: '', color: 'from-terracotta to-primary' },
   { icon: GraduationCap, label: 'Internships Completed', value: 2, suffix: '', color: 'from-sage to-secondary' },
-  { icon: Trophy, label: 'Competitions', value: 3, suffix: '', color: 'from-amber to-terracotta' },
+  { icon: Trophy, label: 'Competitions', value: 19, suffix: '', color: 'from-amber to-terracotta' },
   { icon: Award, label: 'Awards Earned', value: 3, suffix: '', color: 'from-accent to-primary' },
   { icon: Heart, label: 'Organizations', value: 5, suffix: '', color: 'from-terracotta to-sage' },
 ];
@@ -46,7 +46,7 @@ const StatsSection = () => {
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-24 px-4 relative overflow-hidden">
+    <section className="py-16 px-4 relative overflow-hidden">
       {/* Background decoration */}
       <motion.div 
         className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-amber/10 to-transparent rounded-full blur-3xl"
