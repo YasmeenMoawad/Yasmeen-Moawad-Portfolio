@@ -129,7 +129,7 @@ const HeroSection = () => {
                 { href: "tel:+201099794847", icon: Phone, label: "Call Me", color: "bg-primary" },
                 { href: "mailto:yasmeenmwd@gmail.com", icon: Mail, label: "Email", color: "bg-terracotta" },
                 { href: "https://github.com/YasmeenMoawad", icon: Github, label: "GitHub", color: "bg-warm-brown" },
-                { href: "https://linkedin.com/in/yasmeenmoawad", icon: Linkedin, label: "LinkedIn", color: "bg-sage" },
+                { href: "https://www.linkedin.com/in/yasmeen-moawad", icon: Linkedin, label: "LinkedIn", color: "bg-sage" },
               ].map((item, index) => (
                 <motion.a
                   key={item.label}

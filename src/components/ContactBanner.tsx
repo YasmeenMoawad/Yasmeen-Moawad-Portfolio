@@ -113,7 +113,7 @@ const ContactBanner = () => {
             
             <motion.a
               href="mailto:yasmeenmwd@gmail.com"
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-primary via-amber to-terracotta text-primary-foreground font-semibold text-lg shadow-lg"
+              className="relative inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-primary via-amber to-terracotta text-primary-foreground font-semibold text-lg shadow-lg overflow-hidden"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
               transition={{ delay: 0.6 }}
@@ -123,12 +123,12 @@ const ContactBanner = () => {
               }}
               whileTap={{ scale: 0.98 }}
             >
-              <Send className="w-5 h-5" />
-              Get In Touch
+              <Send className="w-5 h-5 relative z-10" />
+              <span className="relative z-10">Get In Touch</span>
               
               {/* Shine effect */}
               <motion.div 
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent rounded-full"
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent rounded-full pointer-events-none"
                 animate={{ x: ["-100%", "200%"] }}
                 transition={{ 
                   duration: 2,
