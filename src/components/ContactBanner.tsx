@@ -17,7 +17,7 @@ const ContactBanner = () => {
         >
           {/* Animated gradient background */}
           <motion.div 
-            className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-amber/10"
+            className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-amber/10 pointer-events-none"
             animate={{ 
               backgroundPosition: ["0% 0%", "100% 100%", "0% 0%"]
             }}
@@ -29,7 +29,7 @@ const ContactBanner = () => {
           {[...Array(5)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute"
+                className="absolute pointer-events-none"
               style={{
                 left: `${20 + i * 15}%`,
                 top: `${10 + (i % 3) * 30}%`,
@@ -112,7 +112,9 @@ const ContactBanner = () => {
             </motion.div>
             
             <a
-              href="mailto:yasmeenmwd@gmail.com"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=yasmeenmwd@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-primary via-amber to-terracotta text-primary-foreground font-semibold text-lg shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-300 active:scale-95"
             >
               <Send className="w-5 h-5" />

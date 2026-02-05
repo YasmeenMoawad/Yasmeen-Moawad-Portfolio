@@ -6,7 +6,7 @@ const projects = [
   {
     name: 'Show Gym',
     description: 'Workouts application for online training, providing AI-powered video guidelines and access to professional coaches.',
-    technologies: ['Flutter', 'AI Videos', 'Go Router', 'Video Player', 'Shared Preferences', 'MVVM Architecture', 'Localization'],
+    technologies: ['Cubit', 'Cloud Firestore', 'Notifications', 'Google Maps', 'GPS', 'Animation'],
     gradient: 'from-terracotta via-primary to-amber',
     playStore: 'https://play.google.com/store/apps/details?id=com.jaadara.show_gym',
     appStore: 'https://apps.apple.com/eg/app/show-gym/id6757421033',
