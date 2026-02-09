@@ -1,6 +1,6 @@
 # Yasmeen Moawad Portfolio
 
 Personal portfolio website.
-<p align="left">
-<a href="(https://yasmeen-moawad-portfolio.vercel.app/)" target="blank"><img align="center" height="30" width="40" /></a>
-</p>
+</h3>
+- Portfolio Link: ([https://github.com/jaadara-co/show-gym](https://yasmeen-moawad-portfolio.vercel.app/))
+<h3 align="left">Connect with me:</h3>
