@@ -7,7 +7,7 @@ const stats = [
   { icon: Briefcase, label: 'Projects Built', value: 5, suffix: '+', color: 'from-primary to-amber' },
   { icon: Building2, label: 'Companies Worked', value: 2, suffix: '', color: 'from-terracotta to-primary' },
   { icon: GraduationCap, label: 'Internships Completed', value: 2, suffix: '', color: 'from-sage to-secondary' },
-  { icon: Trophy, label: 'Competitions', value: 19, suffix: '', color: 'from-amber to-terracotta' },
+  { icon: Trophy, label: 'Competitions', value: 15, suffix: '+', color: 'from-amber to-terracotta' },
   { icon: Award, label: 'Awards Earned', value: 3, suffix: '', color: 'from-accent to-primary' },
   { icon: Heart, label: 'Organizations', value: 5, suffix: '', color: 'from-terracotta to-sage' },
 ];
