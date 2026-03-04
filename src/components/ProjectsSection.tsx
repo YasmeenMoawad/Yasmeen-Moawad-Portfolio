@@ -1,6 +1,11 @@
-import { ExternalLink, Smartphone, ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
+import { ExternalLink, ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
+import riyadhLogo from '@/assets/project-riyadh.jpeg';
+import showGymLogo from '@/assets/project-showgym.jpeg';
+import adalaLogo from '@/assets/project-adala.jpeg';
+import locusLogo from '@/assets/project-locus.jpeg';
+import egemLogo from '@/assets/project-egem.png';
 
 const projects = [
   {
@@ -9,6 +14,7 @@ const projects = [
     description: 'A comprehensive digital ecosystem designed to transform lost and found operations within the Riyadh Public Transport network.',
     technologies: ['Clean Architecture', 'BLoC State Management', 'WebSocket Notifications', 'Real-time Group Chat', 'Dark & Light Theme', 'Localization'],
     gradient: 'from-primary via-sage to-amber',
+    logo: riyadhLogo,
     playStore: null,
     appStore: null,
     github: null,
@@ -19,6 +25,7 @@ const projects = [
     description: 'An application for club providers and regular club attenders to subscribe to and check the latest offers in the area.',
     technologies: ['Payment', 'Cloud Firestore', 'Notifications', 'Google Maps', 'GPS', 'Animation'],
     gradient: 'from-terracotta via-primary to-amber',
+    logo: showGymLogo,
     playStore: 'https://play.google.com/store/apps/details?id=com.jaadara.show_gym',
     appStore: 'https://apps.apple.com/eg/app/show-gym/id6757421033',
     github: null,
@@ -28,6 +35,7 @@ const projects = [
     description: 'Legal services application for individuals and companies, providing fast and secure legal assistance that complies with Saudi regulations.',
     technologies: ['Flutter', 'AI Chatbot', 'File Management', 'Hive', 'Firebase', 'MVC Architecture', 'Localization', 'Voice Recorder'],
     gradient: 'from-primary via-amber to-terracotta',
+    logo: adalaLogo,
     playStore: 'https://play.google.com/store/apps/details?id=com.jadaara.adala_v2',
     appStore: 'https://apps.apple.com/eg/app/ai-%D8%B9%D8%AF%D8%A7%D9%84%D8%A9/id6754815237',
     github: null,
@@ -38,6 +46,7 @@ const projects = [
     description: 'Space information and VR simulator application for educational satellites control and space navigation. Led the team as Flutter Developer and Team Leader.',
     technologies: ['Flutter', 'BLoC/Cubit', 'AI Chatbot', 'AI Image Generator', 'Object Detection', 'MVVM Architecture', 'Video Player'],
     gradient: 'from-sage via-secondary to-primary',
+    logo: locusLogo,
     playStore: null,
     appStore: null,
     github: 'https://github.com/YasmeenMoawad/Locus_UpdatedVersion/tree/main',
@@ -47,6 +56,7 @@ const projects = [
     description: 'Workouts application for online training, providing AI-powered video guidelines and access to professional coaches.',
     technologies: ['Flutter', 'AI Videos', 'Go Router', 'Video Player', 'Shared Preferences', 'MVVM Architecture', 'Localization'],
     gradient: 'from-amber via-sage to-primary',
+    logo: egemLogo,
     playStore: null,
     appStore: null,
     github: 'https://github.com/https-github-com-NourMansour911/Application',
@@ -159,11 +169,11 @@ const ProjectsSection = () => {
               <div className="relative z-10">
                 <div className="flex items-center gap-3 mb-4">
                   <motion.div 
-                    className={`p-3 rounded-xl bg-gradient-to-br ${project.gradient}`}
+                    className="w-12 h-12 rounded-xl overflow-hidden"
                     whileHover={{ rotate: [0, -10, 10, 0] }}
                     transition={{ duration: 0.5 }}
                   >
-                    <Smartphone className="w-5 h-5 text-white" />
+                    <img src={project.logo} alt={project.name} className="w-full h-full object-cover" />
                   </motion.div>
                   <div>
                     <h3 className="text-xl font-display font-bold">{project.name}</h3>
