@@ -11,8 +11,8 @@ const projects = [
   {
     name: 'Riyadh Public Transport',
     subtitle: 'Lost & Found Digital System',
-    description: 'A comprehensive digital ecosystem designed to transform lost and found operations within the Riyadh Public Transport network.',
-    technologies: ['Clean Architecture', 'BLoC State Management', 'WebSocket Notifications', 'Real-time Group Chat', 'Dark & Light Theme', 'Localization'],
+    description: 'A digital ecosystem designed to transform lost and found operations within the Riyadh Public Transport network.',
+    technologies: ['Clean Architecture', 'GetX', 'Dependency Injection', 'WebSocket Notifications', 'Real-time Group Chat', 'Dark & Light Theme', 'Localization'],
     gradient: 'from-primary via-sage to-amber',
     logo: riyadhLogo,
     playStore: null,
