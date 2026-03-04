@@ -4,9 +4,20 @@ import { useRef, useState } from 'react';
 
 const projects = [
   {
+    name: 'Riyadh Public Transport',
+    subtitle: 'Lost & Found Digital System',
+    description: 'A comprehensive digital ecosystem designed to transform lost and found operations within the Riyadh Public Transport network.',
+    technologies: ['Clean Architecture', 'BLoC State Management', 'WebSocket Notifications', 'Real-time Group Chat', 'Dark & Light Theme', 'Localization'],
+    gradient: 'from-primary via-sage to-amber',
+    playStore: null,
+    appStore: null,
+    github: null,
+    notReleased: true,
+  },
+  {
     name: 'Show Gym',
-    description: 'Workouts application for online training, providing AI-powered video guidelines and access to professional coaches.',
-    technologies: ['Cubit', 'Cloud Firestore', 'Notifications', 'Google Maps', 'GPS', 'Animation'],
+    description: 'An application for club providers and regular club attenders to subscribe to and check the latest offers in the area.',
+    technologies: ['Payment', 'Cloud Firestore', 'Notifications', 'Google Maps', 'GPS', 'Animation'],
     gradient: 'from-terracotta via-primary to-amber',
     playStore: 'https://play.google.com/store/apps/details?id=com.jaadara.show_gym',
     appStore: 'https://apps.apple.com/eg/app/show-gym/id6757421033',
@@ -233,6 +244,11 @@ const ProjectsSection = () => {
                       <ExternalLink className="w-3 h-3" />
                       GitHub
                     </motion.a>
+                  )}
+                  {'notReleased' in project && project.notReleased && (
+                    <span className="flex items-center gap-2 px-3 py-2 rounded-lg bg-muted/50 text-muted-foreground text-xs font-medium cursor-default opacity-70">
+                      Not Released Yet
+                    </span>
                   )}
                 </div>
               </div>
