@@ -1,6 +1,7 @@
 import { ExternalLink, ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
+import luxHorseLogo from '@/assets/project-luxhorse.png';
 import riyadhLogo from '@/assets/project-riyadh.jpeg';
 import showGymLogo from '@/assets/project-showgym.jpeg';
 import adalaLogo from '@/assets/project-adala.jpeg';
@@ -9,21 +10,32 @@ import egemLogo from '@/assets/project-egem.png';
 
 const projects = [
   {
-    name: 'Riyadh Public Transport',
-    subtitle: 'Lost & Found Digital System',
-    description: 'A digital ecosystem designed to transform lost and found operations within the Riyadh Public Transport network.',
-    technologies: ['Clean Architecture', 'GetX', 'Dependency Injection', 'WebSocket Notifications', 'Real-time Group Chat', 'Dark & Light Theme', 'Localization'],
-    gradient: 'from-primary via-sage to-amber',
-    logo: riyadhLogo,
+    name: 'Lux Horse',
+    subtitle: 'Satwa',
+    description: 'A digital marketplace ecosystem connecting the equestrian community through horse trading, equestrian services, in-app communication, smart location discovery, and secure online transactions.',
+    technologies: ['Network Connectivity Monitoring', 'Google Maps', 'Real-time Chat', 'Push Notifications', 'Search & Filtering', 'Payment Gateway Integration', 'Cloud Storage', 'OTP Authentication', 'Localization', 'Clean Architecture'],
+    gradient: 'from-sage via-primary to-amber',
+    logo: luxHorseLogo,
     playStore: null,
     appStore: null,
     github: null,
     notReleased: true,
   },
   {
+    name: 'KAPTLF',
+    subtitle: 'Riyadh Public Transport — Lost & Found',
+    description: 'A digital ecosystem designed to transform lost and found operations within the Riyadh Public Transport network.',
+    technologies: ['ShowCaseView', 'Full Clean Architecture', 'Dependency Injection', 'Pusher Notifications', 'GetX', 'Real-time Group Chat', 'Dark/Light Theme', 'Responsive UI', 'Localization', 'QR Code Scanner'],
+    gradient: 'from-primary via-sage to-amber',
+    logo: riyadhLogo,
+    playStore: 'https://play.google.com/store/apps/details?id=com.jadaara.KAPTLF',
+    appStore: 'https://apps.apple.com/eg/app/kaptlf/id6769408653',
+    github: null,
+  },
+  {
     name: 'Show Gym',
     description: 'An application for club providers and regular club attenders to subscribe to and check the latest offers in the area.',
-    technologies: ['Payment', 'Cloud Firestore', 'Notifications', 'Google Maps', 'GPS', 'Animation'],
+    technologies: ['Cloud Firestore', 'Notifications', 'Error & Exception Handling', 'MVC', 'Google Maps', 'Responsive UI', 'Localization', 'GPS', 'External Payment', 'Cubit'],
     gradient: 'from-terracotta via-primary to-amber',
     logo: showGymLogo,
     playStore: 'https://play.google.com/store/apps/details?id=com.jaadara.show_gym',
@@ -32,8 +44,8 @@ const projects = [
   },
   {
     name: 'Adala AI App',
-    description: 'Legal services application for individuals and companies, providing fast and secure legal assistance that complies with Saudi regulations.',
-    technologies: ['Flutter', 'AI Chatbot', 'File Management', 'Hive', 'Firebase', 'MVC Architecture', 'Localization', 'Voice Recorder'],
+    description: 'Legal services application for individuals and companies in a fast, secure way that complies with Saudi regulations.',
+    technologies: ['File Management', 'Consultations', 'Chat & AI Chatbot', 'Hive', 'Localization', 'MVC Architecture', 'Responsive UI', 'Animation', 'Firebase', 'Voice Recorder'],
     gradient: 'from-primary via-amber to-terracotta',
     logo: adalaLogo,
     playStore: 'https://play.google.com/store/apps/details?id=com.jadaara.adala_v2',
@@ -42,9 +54,9 @@ const projects = [
   },
   {
     name: 'LOCUS',
-    subtitle: 'Graduation Project',
-    description: 'Space information and VR simulator application for educational satellites control and space navigation. Led the team as Flutter Developer and Team Leader.',
-    technologies: ['Flutter', 'BLoC/Cubit', 'AI Chatbot', 'AI Image Generator', 'Object Detection', 'MVVM Architecture', 'Video Player'],
+    subtitle: 'Graduation Project — Flutter Developer & Team Leader',
+    description: 'Space information and VR simulator application for educational satellites control and space navigation.',
+    technologies: ['State Management (BLoC/Cubit)', 'Calendar', 'AI Chatbot', 'API Integration', 'AI Image Generator', 'Animation', 'Object Detection AI Model', 'MVVM Architecture', 'Responsive UI', 'Video Player'],
     gradient: 'from-sage via-secondary to-primary',
     logo: locusLogo,
     playStore: null,
