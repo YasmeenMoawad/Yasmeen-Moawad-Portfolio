@@ -10,9 +10,9 @@ const experiences = [
     type: 'Full-time, On-site',
     gradient: 'from-primary to-amber',
     accomplishments: [
-      'Developing advanced Flutter projects tailored for clients in Gulf countries',
-      'Refactoring and optimizing legacy code into clean, reusable, and maintainable solutions',
-      'Continuously expanding expertise by learning and applying new tools, methods, and technologies daily',
+      'Developed and maintained 5+ production Flutter applications for clients across the Gulf and MENA region',
+      'Refactored and updated 3+ legacy applications, transforming code into clean, reusable, and maintainable architecture',
+      'Adopted 17+ new tools, packages, and technologies, accelerating development and enhancing application quality',
     ],
   },
   {
@@ -22,9 +22,9 @@ const experiences = [
     type: 'Part-time, Hybrid',
     gradient: 'from-sage to-secondary',
     accomplishments: [
-      'Guided and coached college students through the complete lifecycle of mobile application development using Flutter',
+      'Mentored 30+ college students through the complete lifecycle of mobile application development using the Flutter framework, enhancing their technical expertise and problem-solving skills',
       'Authored and structured a curriculum that integrated theory, practical exercises, and demo applications',
-      'Presented lectures and disseminated reference materials to consolidate skills beyond classroom sessions',
+      'Presented lectures and disseminated reference materials to consolidate skills beyond classroom sessions and apply them in independent projects',
     ],
   },
 ];
@@ -37,9 +37,9 @@ const internships = [
     type: 'Full-time, Hybrid',
     gradient: 'from-terracotta to-primary',
     accomplishments: [
-      'Delivered assigned tasks ahead of deadlines throughout the training period',
-      'Developed mobile application project, earning positive evaluation from the instructor',
-      'Showcased the final project through a detailed presentation',
+      'Engineered 13 task workflows that consistently met or beat project deadlines',
+      'Developed a full graduation application called WalletApp that manages payment transactions and bank account balance',
+      'Spearheaded a demo that highlighted design decisions and functional outcomes, receiving top-grade evaluation',
     ],
   },
   {
@@ -49,7 +49,7 @@ const internships = [
     type: 'Full-time, Online',
     gradient: 'from-amber to-sage',
     accomplishments: [
-      'Educated about full mobile app development cycle, from planning to deployment',
+      'Educated about the full mobile app development cycle, from planning and coding to debugging, testing, and deployment of features',
       'Documented project workflows, code structure, and feature descriptions for future reference',
     ],
   },

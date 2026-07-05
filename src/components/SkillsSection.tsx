@@ -3,29 +3,32 @@ import { useRef } from 'react';
 import { Code, Palette, Users, Lightbulb, Smartphone, Database, GitBranch, Cpu, Flame, Layout, Sparkles, TestTube, Figma } from 'lucide-react';
 
 const technicalSkills = [
-  { name: 'Dart & Flutter', icon: Smartphone },
-  { name: 'Clean Architecture', icon: Layout },
-  { name: 'State Management (BLoC, Cubit)', icon: Cpu },
-  { name: 'REST APIs', icon: Database },
-  { name: 'Firebase', icon: Flame },
+  { name: 'Dart & Flutter Framework', icon: Smartphone },
   { name: 'Responsive UI', icon: Layout },
-  { name: 'Animations', icon: Sparkles },
-  { name: 'Version Control (Git)', icon: GitBranch },
-  { name: 'Python', icon: Code },
-  { name: 'C++', icon: Code },
   { name: 'Data Structures & Algorithms', icon: Cpu },
-  { name: 'SDLC & Agile', icon: GitBranch },
-  { name: 'Testing & Debugging', icon: TestTube },
-  { name: 'Figma', icon: Figma },
+  { name: 'Firebase', icon: Flame },
+  { name: 'Problem Solving', icon: Lightbulb },
+  { name: 'SDLC & Agile Methodologies', icon: GitBranch },
+  { name: 'State Management', icon: Cpu },
+  { name: 'Version Control (Git)', icon: GitBranch },
+  { name: 'Clean Architecture', icon: Layout },
+  { name: 'CI/CD', icon: GitBranch },
+  { name: 'REST APIs', icon: Database },
+  { name: 'Animations', icon: Sparkles },
+  { name: 'WebSocket', icon: Database },
+  { name: 'Pusher', icon: Flame },
+  { name: 'Dependency Injection', icon: Code },
+  { name: 'Unit Testing', icon: TestTube },
+  { name: 'App Store & Google Play Deployment', icon: Smartphone },
 ];
 
 const softSkills = [
-  { name: 'Team Leadership', icon: Users },
+  { name: 'Leadership', icon: Users },
   { name: 'Presentation Skills', icon: Lightbulb },
-  { name: 'Strategic Planning', icon: Code },
+  { name: 'Strong Planner', icon: Code },
   { name: 'Cross-cultural Communication', icon: Users },
-  { name: 'Problem Solving', icon: Lightbulb },
-  { name: 'Mentoring & Teaching', icon: Palette },
+  { name: 'Responsibility', icon: Palette },
+  { name: 'Flexibility', icon: Lightbulb },
 ];
 
 const SkillsSection = () => {
