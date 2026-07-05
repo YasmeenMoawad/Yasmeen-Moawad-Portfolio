@@ -23,12 +23,12 @@ const technicalSkills = [
 ];
 
 const softSkills = [
-  { name: 'Leadership', icon: Users },
+  { name: 'Team Leadership', icon: Users },
   { name: 'Presentation Skills', icon: Lightbulb },
-  { name: 'Strong Planner', icon: Code },
+  { name: 'Strategic Planning', icon: Code },
   { name: 'Cross-cultural Communication', icon: Users },
-  { name: 'Responsibility', icon: Palette },
-  { name: 'Flexibility', icon: Lightbulb },
+  { name: 'Problem Solving', icon: Lightbulb },
+  { name: 'Mentoring & Teaching', icon: Palette },
 ];
 
 const SkillsSection = () => {

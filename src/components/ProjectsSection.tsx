@@ -13,7 +13,7 @@ const projects = [
     name: 'Lux Horse',
     subtitle: 'Satwa',
     description: 'A digital marketplace ecosystem connecting the equestrian community through horse trading, equestrian services, in-app communication, smart location discovery, and secure online transactions.',
-    technologies: ['Network Connectivity Monitoring', 'Google Maps', 'Real-time Chat', 'Push Notifications', 'Search & Filtering', 'Payment Gateway Integration', 'Cloud Storage', 'OTP Authentication', 'Localization', 'Clean Architecture'],
+    technologies: ['Network Connectivity Monitoring', 'Payment Gateway Integration', 'Cloud Storage', 'OTP Authentication', 'Real-time Chat', 'Localization', 'Clean Architecture'],
     gradient: 'from-sage via-primary to-amber',
     logo: luxHorseLogo,
     playStore: null,
