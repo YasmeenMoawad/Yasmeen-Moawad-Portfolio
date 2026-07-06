@@ -115,7 +115,7 @@ const HeroSection = () => {
               variants={itemVariants}
               className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed font-body"
             >
-              A flutter geek aiming to develop my skills and show them through my projects. I have experience leading successful teams and participating in competitive contests to gain valuable experience and enhance my problem-solving abilities. Volunteered in many organizations to learn and share my knowledge with others.
+              A flutter geek with 1+ year of professional experience developing production mobile applications for clients across the Gulf and MENA region. I have experience leading successful teams and participating in competitive contests to gain valuable experience and enhance my problem-solving abilities. Volunteered in many organizations to learn and share my knowledge with others.
             </motion.p>
             
             <motion.div 
