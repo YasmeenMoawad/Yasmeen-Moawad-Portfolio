@@ -20,15 +20,16 @@ const technicalSkills = [
   { name: 'Dependency Injection', icon: Code },
   { name: 'Unit Testing', icon: TestTube },
   { name: 'App Store & Google Play Deployment', icon: Smartphone },
+  { name: 'TestFlight', icon: Smartphone },
 ];
 
 const softSkills = [
-  { name: 'Team Leadership', icon: Users },
+  { name: 'Leadership', icon: Users },
   { name: 'Presentation Skills', icon: Lightbulb },
-  { name: 'Strategic Planning', icon: Code },
+  { name: 'Strong Planner', icon: Code },
   { name: 'Cross-cultural Communication', icon: Users },
-  { name: 'Problem Solving', icon: Lightbulb },
-  { name: 'Mentoring & Teaching', icon: Palette },
+  { name: 'Responsibility', icon: TestTube },
+  { name: 'Flexibility', icon: Figma },
 ];
 
 const SkillsSection = () => {
