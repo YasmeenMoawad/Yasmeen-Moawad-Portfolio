@@ -4,6 +4,18 @@ import { useRef } from 'react';
 
 const experiences = [
   {
+    title: 'Mobile Application Developer',
+    company: 'Persist, United States',
+    period: 'Jul 2026 — Present',
+    type: 'Remote, Independent Contractor',
+    gradient: 'from-primary to-amber',
+    accomplishments: [
+      'Responsible for the development and enhancement of Flutter features across applications for American clients',
+      'Working with developers and project managers through daily discussions and meetings to review and plan tasks',
+      'Leading weekly meetings with clients to present completed work, gather feedback, and translate their needs into development tasks',
+    ],
+  },
+  {
     title: 'Mobile Application Developer (Flutter)',
     company: 'Jadara, Egypt',
     period: 'Sep 2025 — Present',
@@ -22,9 +34,9 @@ const experiences = [
     type: 'Part-time, Hybrid',
     gradient: 'from-sage to-secondary',
     accomplishments: [
-      'Mentored 30+ college students through the complete lifecycle of mobile application development using the Flutter framework, enhancing their technical expertise and problem-solving skills',
+      'Mentored 30+ New Mansoura University students through the complete lifecycle of mobile application development using the Flutter framework, enhancing their technical expertise and problem-solving skills',
       'Authored and structured a curriculum that integrated theory, practical exercises, and demo applications',
-      'Presented lectures and disseminated reference materials to consolidate skills beyond classroom sessions and apply them in independent projects',
+      'Presented lectures and disseminated reference materials, to consolidate skills beyond classroom sessions and apply them in independent projects',
     ],
   },
 ];

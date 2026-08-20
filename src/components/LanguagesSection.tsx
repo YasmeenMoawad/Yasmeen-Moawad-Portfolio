@@ -20,7 +20,7 @@ const LanguagesSection = () => {
           </h2>
         </motion.div>
         
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-3 gap-6">
           <motion.div 
             className="glass-card rounded-2xl p-6 relative overflow-hidden"
             initial={{ opacity: 0, x: -50 }}
@@ -68,12 +68,42 @@ const LanguagesSection = () => {
               ))}
             </div>
           </motion.div>
+
+          <motion.div 
+            className="glass-card rounded-2xl p-6 relative overflow-hidden"
+            initial={{ opacity: 0, y: 50 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+            transition={{ delay: 0.3 }}
+            whileHover={{ scale: 1.03, y: -5 }}
+          >
+            <div className="flex items-center gap-3 mb-4">
+              <motion.div 
+                className="p-3 rounded-xl bg-gradient-to-br from-sage/20 to-secondary/20"
+                whileHover={{ rotate: [0, -10, 10, 0] }}
+              >
+                <Languages className="w-6 h-6 text-sage" />
+              </motion.div>
+              <div>
+                <h3 className="text-xl font-display font-bold">Spanish</h3>
+                <span className="text-sm text-muted-foreground">Beginner A1</span>
+              </div>
+            </div>
+            
+            <div className="relative h-3 bg-muted rounded-full overflow-hidden">
+              <motion.div 
+                className="absolute inset-y-0 left-0 bg-gradient-to-r from-sage to-secondary rounded-full"
+                initial={{ width: 0 }}
+                animate={isInView ? { width: "30%" } : { width: 0 }}
+                transition={{ delay: 0.5, duration: 0.8 }}
+              />
+            </div>
+          </motion.div>
           
           <motion.div 
             className="glass-card rounded-2xl p-6 relative overflow-hidden"
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-            transition={{ delay: 0.3 }}
+            transition={{ delay: 0.4 }}
             whileHover={{ scale: 1.03, y: -5 }}
           >
             {/* Special highlight for IELTS */}
@@ -109,7 +139,7 @@ const LanguagesSection = () => {
                   className="absolute inset-y-0 left-0 bg-gradient-to-r from-amber to-terracotta rounded-full"
                   initial={{ width: 0 }}
                   animate={isInView ? { width: "90%" } : { width: 0 }}
-                  transition={{ delay: 0.5, duration: 0.8 }}
+                  transition={{ delay: 0.6, duration: 0.8 }}
                 />
                 <motion.div 
                   className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
@@ -126,7 +156,7 @@ const LanguagesSection = () => {
                 className="flex items-center gap-3 p-4 rounded-xl bg-gradient-to-r from-amber/20 to-terracotta/20 border border-amber/30 cursor-pointer block"
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                transition={{ delay: 0.7 }}
+                transition={{ delay: 0.8 }}
                 whileHover={{ scale: 1.02 }}
               >
                 <motion.div
