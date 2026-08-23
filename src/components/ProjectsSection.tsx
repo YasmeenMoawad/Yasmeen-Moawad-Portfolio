@@ -7,7 +7,7 @@ import showGymLogo from '@/assets/project-showgym.jpeg';
 import adalaLogo from '@/assets/project-adala.jpeg';
 import locusLogo from '@/assets/project-locus.jpeg';
 import egemLogo from '@/assets/project-egem.png';
-import cloLogo from '@/assets/project-clo.png';
+import cloLogo from '@/assets/project-clo.jpeg.asset.json';
 
 const projects = [
   {
@@ -198,7 +198,7 @@ const ProjectsSection = () => {
                     whileHover={{ rotate: [0, -10, 10, 0] }}
                     transition={{ duration: 0.5 }}
                   >
-                    <img src={project.logo} alt={project.name} className="w-full h-full object-cover" />
+                    <img src={typeof project.logo === 'string' ? project.logo : project.logo.url} alt={project.name} className="w-full h-full object-cover" />
                   </motion.div>
                   <div>
                     <h3 className="text-xl font-display font-bold">{project.name}</h3>
