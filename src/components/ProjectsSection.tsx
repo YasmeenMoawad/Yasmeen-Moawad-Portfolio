@@ -7,7 +7,7 @@ import showGymLogo from '@/assets/project-showgym.jpeg';
 import adalaLogo from '@/assets/project-adala.jpeg';
 import locusLogo from '@/assets/project-locus.jpeg';
 import egemLogo from '@/assets/project-egem.png';
-import cloLogo from '@/assets/project-clo.jpeg.asset.json';
+import cloLogo from '@/assets/project-clo.jpeg';
 
 const projects = [
   {
