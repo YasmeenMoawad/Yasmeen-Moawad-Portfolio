@@ -198,7 +198,7 @@ const ProjectsSection = () => {
                     whileHover={{ rotate: [0, -10, 10, 0] }}
                     transition={{ duration: 0.5 }}
                   >
-                    <img src={typeof project.logo === 'string' ? project.logo : project.logo.url} alt={project.name} className="w-full h-full object-cover" />
+                    <img src={project.logo} alt={project.name} className="w-full h-full object-cover" />
                   </motion.div>
                   <div>
                     <h3 className="text-xl font-display font-bold">{project.name}</h3>
