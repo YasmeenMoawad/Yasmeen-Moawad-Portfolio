@@ -20,87 +20,89 @@ const LanguagesSection = () => {
           </h2>
         </motion.div>
         
-        <div className="grid md:grid-cols-3 gap-6">
-          <motion.div 
-            className="glass-card rounded-2xl p-6 relative overflow-hidden"
-            initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
-            transition={{ delay: 0.2 }}
-            whileHover={{ scale: 1.03, y: -5 }}
-          >
-            <div className="flex items-center gap-3 mb-4">
-              <motion.div 
-                className="p-3 rounded-xl bg-gradient-to-br from-primary/20 to-amber/20"
-                whileHover={{ rotate: [0, -10, 10, 0] }}
-              >
-                <Languages className="w-6 h-6 text-primary" />
-              </motion.div>
-              <div>
-                <h3 className="text-xl font-display font-bold">Arabic</h3>
-                <span className="text-sm text-muted-foreground">Native Speaker</span>
-              </div>
-            </div>
-            
-            <div className="relative h-3 bg-muted rounded-full overflow-hidden">
-              <motion.div 
-                className="absolute inset-y-0 left-0 bg-gradient-to-r from-primary to-amber rounded-full"
-                initial={{ width: 0 }}
-                animate={isInView ? { width: "100%" } : { width: 0 }}
-                transition={{ delay: 0.4, duration: 0.8 }}
-              />
-              <motion.div 
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
-                animate={{ x: ["-100%", "200%"] }}
-                transition={{ duration: 2, repeat: Infinity, repeatDelay: 2 }}
-              />
-            </div>
-            
-            <div className="flex items-center gap-1 mt-3">
-              {[...Array(5)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
-                  transition={{ delay: 0.5 + i * 0.1 }}
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="flex flex-col gap-6">
+            <motion.div 
+              className="glass-card rounded-2xl p-6 relative overflow-hidden"
+              initial={{ opacity: 0, x: -50 }}
+              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+              transition={{ delay: 0.2 }}
+              whileHover={{ scale: 1.03, y: -5 }}
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <motion.div 
+                  className="p-3 rounded-xl bg-gradient-to-br from-primary/20 to-amber/20"
+                  whileHover={{ rotate: [0, -10, 10, 0] }}
                 >
-                  <Star className="w-4 h-4 text-amber" fill="currentColor" />
+                  <Languages className="w-6 h-6 text-primary" />
                 </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          <motion.div 
-            className="glass-card rounded-2xl p-6 relative overflow-hidden"
-            initial={{ opacity: 0, y: 50 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-            transition={{ delay: 0.3 }}
-            whileHover={{ scale: 1.03, y: -5 }}
-          >
-            <div className="flex items-center gap-3 mb-4">
-              <motion.div 
-                className="p-3 rounded-xl bg-gradient-to-br from-sage/20 to-secondary/20"
-                whileHover={{ rotate: [0, -10, 10, 0] }}
-              >
-                <Languages className="w-6 h-6 text-sage" />
-              </motion.div>
-              <div>
-                <h3 className="text-xl font-display font-bold">Spanish</h3>
-                <span className="text-sm text-muted-foreground">Beginner A1</span>
+                <div>
+                  <h3 className="text-xl font-display font-bold">Arabic</h3>
+                  <span className="text-sm text-muted-foreground">Native Speaker</span>
+                </div>
               </div>
-            </div>
-            
-            <div className="relative h-3 bg-muted rounded-full overflow-hidden">
-              <motion.div 
-                className="absolute inset-y-0 left-0 bg-gradient-to-r from-sage to-secondary rounded-full"
-                initial={{ width: 0 }}
-                animate={isInView ? { width: "30%" } : { width: 0 }}
-                transition={{ delay: 0.5, duration: 0.8 }}
-              />
-            </div>
-          </motion.div>
+              
+              <div className="relative h-3 bg-muted rounded-full overflow-hidden">
+                <motion.div 
+                  className="absolute inset-y-0 left-0 bg-gradient-to-r from-primary to-amber rounded-full"
+                  initial={{ width: 0 }}
+                  animate={isInView ? { width: "100%" } : { width: 0 }}
+                  transition={{ delay: 0.4, duration: 0.8 }}
+                />
+                <motion.div 
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                  animate={{ x: ["-100%", "200%"] }}
+                  transition={{ duration: 2, repeat: Infinity, repeatDelay: 2 }}
+                />
+              </div>
+              
+              <div className="flex items-center gap-1 mt-3">
+                {[...Array(5)].map((_, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
+                    transition={{ delay: 0.5 + i * 0.1 }}
+                  >
+                    <Star className="w-4 h-4 text-amber" fill="currentColor" />
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div 
+              className="glass-card rounded-2xl p-6 relative overflow-hidden"
+              initial={{ opacity: 0, y: 50 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+              transition={{ delay: 0.3 }}
+              whileHover={{ scale: 1.03, y: -5 }}
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <motion.div 
+                  className="p-3 rounded-xl bg-gradient-to-br from-sage/20 to-secondary/20"
+                  whileHover={{ rotate: [0, -10, 10, 0] }}
+                >
+                  <Languages className="w-6 h-6 text-sage" />
+                </motion.div>
+                <div>
+                  <h3 className="text-xl font-display font-bold">Spanish</h3>
+                  <span className="text-sm text-muted-foreground">Beginner A1</span>
+                </div>
+              </div>
+              
+              <div className="relative h-3 bg-muted rounded-full overflow-hidden">
+                <motion.div 
+                  className="absolute inset-y-0 left-0 bg-gradient-to-r from-sage to-secondary rounded-full"
+                  initial={{ width: 0 }}
+                  animate={isInView ? { width: "30%" } : { width: 0 }}
+                  transition={{ delay: 0.5, duration: 0.8 }}
+                />
+              </div>
+            </motion.div>
+          </div>
           
           <motion.div 
-            className="glass-card rounded-2xl p-6 relative overflow-hidden"
+            className="glass-card rounded-2xl p-6 relative overflow-hidden md:row-span-2"
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
             transition={{ delay: 0.4 }}
