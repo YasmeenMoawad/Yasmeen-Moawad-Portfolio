@@ -21,8 +21,8 @@ const LanguagesSection = () => {
         </motion.div>
         
         <div className="grid md:grid-cols-2 gap-6">
-          <div className="flex flex-col gap-6">
-            <motion.div 
+          <div className="flex flex-col gap-6 md:row-span-2 h-full">
+            <motion.div
               className="glass-card rounded-2xl p-6 relative overflow-hidden"
               initial={{ opacity: 0, x: -50 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
