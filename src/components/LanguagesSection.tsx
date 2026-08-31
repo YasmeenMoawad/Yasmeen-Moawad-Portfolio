@@ -71,7 +71,7 @@ const LanguagesSection = () => {
             </motion.div>
 
             <motion.div 
-              className="glass-card rounded-2xl p-6 relative overflow-hidden"
+              className="glass-card rounded-2xl p-6 relative overflow-hidden flex-1"
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
               transition={{ delay: 0.3 }}
